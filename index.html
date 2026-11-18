@@ -9,13 +9,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
                     colors: {
                         brand: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
                     }
@@ -30,65 +30,157 @@
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
-            color: #f5f5f5;
+            background: #050505;
+            color: #fafafa;
             margin: 0;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
         ::selection { background: #f59e0b; color: #000; }
 
-        .surface { background: #141414; border: 1px solid rgba(255,255,255,0.08); }
-        .surface-hover { transition: border-color .2s ease, background .2s ease, transform .2s ease; }
-        .surface-hover:hover { border-color: rgba(245,158,11,0.4); background: #1a1a1a; transform: translateY(-2px); }
-
-        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-        .reveal.in { opacity: 1; transform: none; }
-
-        .btn-primary {
-            background: #f59e0b; color: #000; font-weight: 600;
-            transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+        /* Background layers */
+        .bg-grid {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background-image:
+                linear-gradient(rgba(245,158,11,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(245,158,11,0.04) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
         }
-        .btn-primary:hover { background: #fbbf24; transform: translateY(-1px); box-shadow: 0 10px 30px -10px rgba(245,158,11,0.5); }
+        .bg-orb {
+            position: fixed; border-radius: 50%; filter: blur(90px); pointer-events: none; z-index: 0;
+            animation: orbFloat 18s ease-in-out infinite;
+        }
+        .orb-1 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(245,158,11,0.18), transparent 70%); top: -12%; right: -8%; }
+        .orb-2 { width: 420px; height: 420px; background: radial-gradient(circle, rgba(234,88,12,0.12), transparent 70%); bottom: -8%; left: -6%; animation-delay: -9s; }
+        .orb-3 { width: 320px; height: 320px; background: radial-gradient(circle, rgba(161,98,7,0.12), transparent 70%); top: 45%; left: 45%; animation-delay: -4s; }
+
+        @keyframes orbFloat {
+            0%,100% { transform: translate(0,0) scale(1); }
+            33% { transform: translate(25px,-20px) scale(1.04); }
+            66% { transform: translate(-18px,18px) scale(0.97); }
+        }
+
+        /* Glass */
+        .glass {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+        .glass-hover {
+            transition: border-color .3s ease, background .3s ease, transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease;
+        }
+        .glass-hover:hover {
+            border-color: rgba(245,158,11,0.45);
+            background: rgba(255,255,255,0.06);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -16px rgba(245,158,11,0.25);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(120deg, #fbbf24 0%, #f59e0b 40%, #fbbf24 80%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+        @keyframes shimmer { to { background-position: 200% center; } }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #000; font-weight: 600;
+            box-shadow: 0 8px 24px -8px rgba(245,158,11,0.5);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -8px rgba(245,158,11,0.65); filter: brightness(1.05); }
 
         .btn-ghost {
-            background: transparent; color: #f5f5f5; border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.03); color: #fafafa;
+            border: 1px solid rgba(255,255,255,0.12);
             transition: border-color .2s ease, background .2s ease, transform .2s ease;
         }
-        .btn-ghost:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.04); transform: translateY(-1px); }
+        .btn-ghost:hover { border-color: rgba(245,158,11,0.5); background: rgba(245,158,11,0.06); transform: translateY(-2px); }
 
-        .accent { color: #f59e0b; }
-        .muted { color: #a3a3a3; }
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
 
+        /* Marquee */
+        .marquee { animation: marquee 32s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Glow dot */
+        .glow-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #f59e0b;
+            box-shadow: 0 0 12px #f59e0b, 0 0 24px rgba(245,158,11,0.4);
+        }
+
+        /* Card shine */
+        .card-shine { position: relative; overflow: hidden; }
+        .card-shine::after {
+            content: ''; position: absolute; top: -60%; left: -60%; width: 220%; height: 220%;
+            background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+            transform: rotate(25deg); transition: .9s; pointer-events: none;
+        }
+        .card-shine:hover::after { left: 100%; }
+
+        /* Scroll progress */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 2px; z-index: 100;
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+            transition: width .1s linear;
+        }
+
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #404040; }
 
         .skip-link { position: absolute; left: -9999px; }
         .skip-link:focus { left: 1rem; top: 1rem; z-index: 100; background: #f59e0b; color: #000; padding: .5rem 1rem; border-radius: .5rem; }
 
+        .float { animation: float 7s ease-in-out infinite; }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
         @media (prefers-reduced-motion: reduce) {
             .reveal { opacity: 1; transform: none; transition: none; }
+            .marquee { animation: none; }
             html { scroll-behavior: auto; }
         }
     </style>
 </head>
-<body x-data="{ isMenuOpen: false }">
+<body x-data="{ isMenuOpen: false, scrollProgress: 0 }"
+      @scroll.window="scrollProgress = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100">
 
     <a href="#tentang" class="skip-link">Lewati ke konten</a>
 
-    <!-- Navigation -->
-    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-black/60 border-b border-white/5">
+    <div class="scroll-progress" :style="`width: ${scrollProgress}%`"></div>
+
+    <!-- Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="bg-grid"></div>
+        <div class="bg-orb orb-1"></div>
+        <div class="bg-orb orb-2"></div>
+        <div class="bg-orb orb-3"></div>
+    </div>
+
+    <!-- Nav -->
+    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-black/50 border-b border-white/5">
         <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Navigasi utama">
-            <a href="#" @click.prevent="window.scrollTo({top:0,behavior:'smooth'})" class="flex items-center gap-2 font-semibold tracking-tight">
-                <span class="w-8 h-8 rounded-lg bg-brand-500 text-black flex items-center justify-center font-bold">A</span>
-                <span>Antono<span class="accent">_</span></span>
+            <a href="#" @click.prevent="window.scrollTo({top:0,behavior:'smooth'})" class="flex items-center gap-2.5 font-bold tracking-tight group">
+                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-black flex items-center justify-center font-black shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform">A</span>
+                <span>Antono<span class="text-amber-400">_</span></span>
             </a>
 
             <div class="hidden md:flex items-center gap-8 text-sm">
                 <template x-for="item in ['Tentang','Keahlian','Proyek','Pengalaman','Kontak']" :key="item">
                     <button @click="document.getElementById(item.toLowerCase()).scrollIntoView({behavior:'smooth'})"
-                            class="text-neutral-400 hover:text-white transition-colors" x-text="item"></button>
+                            class="text-neutral-400 hover:text-white transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-amber-400 hover:after:w-full after:transition-all" x-text="item"></button>
                 </template>
             </div>
 
@@ -96,127 +188,160 @@
                 <a href="#" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-primary text-sm">
                     <i class="fa-solid fa-download"></i> Download CV
                 </a>
-                <button @click="isMenuOpen = !isMenuOpen" class="md:hidden w-9 h-9 rounded-lg surface flex items-center justify-center" aria-label="Menu">
+                <button @click="isMenuOpen = !isMenuOpen" class="md:hidden w-9 h-9 rounded-lg glass flex items-center justify-center" aria-label="Menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </nav>
 
-        <div x-show="isMenuOpen" x-cloak x-transition class="md:hidden border-t border-white/5 bg-black/90">
-            <div class="px-6 py-4 flex flex-col gap-3">
+        <div x-show="isMenuOpen" x-cloak x-transition class="md:hidden border-t border-white/5 bg-black/80 backdrop-blur-xl">
+            <div class="px-6 py-4 flex flex-col gap-2">
                 <template x-for="item in ['Tentang','Keahlian','Proyek','Pengalaman','Kontak']" :key="item">
                     <button @click="document.getElementById(item.toLowerCase()).scrollIntoView({behavior:'smooth'}); isMenuOpen=false"
-                            class="text-left py-2 text-neutral-300 hover:text-white" x-text="item"></button>
+                            class="text-left py-2 text-neutral-300 hover:text-amber-400 transition-colors" x-text="item"></button>
                 </template>
             </div>
         </div>
     </header>
 
-    <main>
+    <main class="relative z-10">
         <!-- Hero -->
-        <section id="tentang" class="pt-32 pb-20 px-6">
-            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <section id="tentang" class="min-h-screen flex items-center pt-24 pb-16 px-6">
+            <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-14 items-center">
                 <div class="reveal">
-                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full surface text-xs font-medium text-neutral-300 mb-6">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-medium text-neutral-300 mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                        </span>
                         Available for projects
                     </span>
 
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
-                        Building digital solutions that <span class="accent">scale.</span>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight">
+                        <span class="block">Membangun</span>
+                        <span class="gradient-text">Solusi Digital.</span>
                     </h1>
 
-                    <p class="mt-6 text-lg muted leading-relaxed max-w-xl">
-                        Principal Fullstack Developer dengan pengalaman 15+ tahun merancang dan mengembangkan sistem berperforma tinggi untuk skala enterprise.
+                    <p class="mt-6 text-lg text-neutral-400 leading-relaxed max-w-xl">
+                        Principal Fullstack Developer dengan pengalaman <span class="text-white font-semibold">15+ tahun</span> merancang dan mengembangkan sistem berperforma tinggi untuk skala enterprise.
                     </p>
 
                     <div class="mt-8 flex flex-wrap gap-3">
-                        <button @click="document.getElementById('proyek').scrollIntoView({behavior:'smooth'})" class="px-6 py-3 rounded-lg btn-primary">
-                            Lihat Proyek
+                        <button @click="document.getElementById('proyek').scrollIntoView({behavior:'smooth'})" class="px-6 py-3.5 rounded-xl btn-primary inline-flex items-center gap-2">
+                            Lihat Proyek <i class="fa-solid fa-arrow-right text-sm"></i>
                         </button>
-                        <button @click="document.getElementById('kontak').scrollIntoView({behavior:'smooth'})" class="px-6 py-3 rounded-lg btn-ghost">
-                            Hubungi Saya <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        <button @click="document.getElementById('kontak').scrollIntoView({behavior:'smooth'})" class="px-6 py-3.5 rounded-xl btn-ghost inline-flex items-center gap-2">
+                            Hubungi Saya
                         </button>
                     </div>
 
                     <dl class="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
-                        <div>
-                            <dt class="text-3xl font-bold">15+</dt>
-                            <dd class="text-sm muted mt-1">Tahun Pengalaman</dd>
+                        <div class="reveal">
+                            <dt class="text-4xl font-black gradient-text">15+</dt>
+                            <dd class="text-sm text-neutral-500 mt-1">Tahun Pengalaman</dd>
                         </div>
-                        <div>
-                            <dt class="text-3xl font-bold">50+</dt>
-                            <dd class="text-sm muted mt-1">Proyek Selesai</dd>
+                        <div class="reveal">
+                            <dt class="text-4xl font-black gradient-text">50+</dt>
+                            <dd class="text-sm text-neutral-500 mt-1">Proyek Selesai</dd>
                         </div>
-                        <div>
-                            <dt class="text-3xl font-bold">30+</dt>
-                            <dd class="text-sm muted mt-1">Technologies</dd>
+                        <div class="reveal">
+                            <dt class="text-4xl font-black gradient-text">30+</dt>
+                            <dd class="text-sm text-neutral-500 mt-1">Technologies</dd>
                         </div>
                     </dl>
                 </div>
 
                 <div class="reveal flex justify-center lg:justify-end">
-                    <div class="surface rounded-2xl p-6 w-full max-w-sm">
-                        <div class="flex items-center gap-4">
-                            <img src="https://avatars.githubusercontent.com/u/73228642?v=4" alt="Foto profil Antono" class="w-20 h-20 rounded-xl object-cover border border-white/10">
-                            <div>
-                                <h2 class="text-xl font-bold">Antono</h2>
-                                <p class="text-sm accent font-medium">Principal Fullstack Developer</p>
+                    <div class="relative float">
+                        <div class="absolute -inset-6 rounded-3xl bg-gradient-to-br from-amber-500/20 to-orange-600/10 blur-2xl"></div>
+                        <div class="relative glass rounded-2xl p-6 w-full max-w-sm card-shine">
+                            <div class="flex items-center gap-4">
+                                <div class="relative">
+                                    <img src="https://avatars.githubusercontent.com/u/73228642?v=4" alt="Foto profil Antono" class="w-20 h-20 rounded-xl object-cover border border-white/10">
+                                    <span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center border-2 border-black text-black text-xs">
+                                        <i class="fa-solid fa-check"></i>
+                                    </span>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold">Antono</h2>
+                                    <p class="text-sm text-amber-400 font-medium">Principal Fullstack Developer</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
-                            <div class="surface rounded-lg p-3">
-                                <span class="block text-xs muted mb-1">Location</span>
-                                <span class="font-medium">Indonesia 🇮🇩</span>
+                            <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                                <div class="glass rounded-lg p-3">
+                                    <span class="block text-xs text-neutral-500 mb-1">Location</span>
+                                    <span class="font-medium">Indonesia 🇮🇩</span>
+                                </div>
+                                <div class="glass rounded-lg p-3">
+                                    <span class="block text-xs text-neutral-500 mb-1">Experience</span>
+                                    <span class="font-medium">15+ Years</span>
+                                </div>
                             </div>
-                            <div class="surface rounded-lg p-3">
-                                <span class="block text-xs muted mb-1">Experience</span>
-                                <span class="font-medium">15+ Years</span>
+                            <div class="mt-5 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 text-xs font-medium">Backend</span>
+                                <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs font-medium">Frontend</span>
+                                <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs font-medium">DevOps</span>
                             </div>
-                        </div>
-                        <div class="mt-6 flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs font-medium">Backend</span>
-                            <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs font-medium">Frontend</span>
-                            <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs font-medium">DevOps</span>
-                        </div>
-                        <div class="mt-6 flex items-center gap-3 text-neutral-400">
-                            <a href="https://github.com/antonocik" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://twitter.com/antonocik" target="_blank" rel="noopener" aria-label="X" class="hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="https://linkedin.com/in/antonocik" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://instagram.com/antonocik" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                            <div class="mt-6 flex items-center gap-4 text-neutral-400">
+                                <a href="https://github.com/antonocik" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-amber-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+                                <a href="https://twitter.com/antonocik" target="_blank" rel="noopener" aria-label="X" class="hover:text-amber-400 transition-colors"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                                <a href="https://linkedin.com/in/antonocik" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-amber-400 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                                <a href="https://instagram.com/antonocik" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-amber-400 transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-neutral-600 text-xs tracking-widest">
+                <span>SCROLL</span>
+                <i class="fa-solid fa-chevron-down animate-bounce"></i>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <section class="py-5 border-y border-white/5 relative z-10 overflow-hidden bg-black/40">
+            <div class="flex whitespace-nowrap marquee">
+                <template x-for="i in 2" :key="i">
+                    <div class="flex items-center gap-10 px-6">
+                        <template x-for="tech in ['React.js','Node.js','Python','AWS','Docker','PostgreSQL','MongoDB','GraphQL','Redis','Kubernetes','TypeScript','Go','Vue.js','Next.js','Tailwind']" :key="tech">
+                            <span class="text-sm font-semibold text-neutral-500 hover:text-amber-400 transition-colors flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-500/60"></span>
+                                <span x-text="tech"></span>
+                            </span>
+                        </template>
+                    </div>
+                </template>
+            </div>
         </section>
 
         <!-- Skills -->
-        <section id="keahlian" class="py-20 px-6 border-t border-white/5">
+        <section id="keahlian" class="py-24 px-6 relative z-10">
             <div class="max-w-6xl mx-auto">
-                <div class="mb-12 reveal">
-                    <p class="text-sm accent font-semibold tracking-widest uppercase">Expertise</p>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Keahlian &amp; Tech Stack</h2>
+                <div class="mb-14 reveal">
+                    <p class="text-sm text-amber-400 font-semibold tracking-widest uppercase">Expertise</p>
+                    <h2 class="text-3xl md:text-5xl font-black mt-2">Keahlian &amp; <span class="gradient-text">Tech Stack</span></h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                     <template x-for="(skill, index) in [
-                        { title: 'Frontend Development', icon: 'fa-brands fa-react', items: ['React.js','Vue.js','Next.js','TypeScript','Tailwind CSS'] },
-                        { title: 'Backend & APIs', icon: 'fa-solid fa-server', items: ['Node.js','Python','Go','GraphQL','REST API'] },
-                        { title: 'Database & Storage', icon: 'fa-solid fa-database', items: ['PostgreSQL','MongoDB','Redis','Firebase','Supabase'] },
-                        { title: 'Cloud & DevOps', icon: 'fa-brands fa-aws', items: ['AWS','Docker','Kubernetes','CI/CD','Terraform'] },
-                        { title: 'Mobile Development', icon: 'fa-solid fa-mobile-screen', items: ['React Native','Flutter','iOS','Android'] },
-                        { title: 'AI & Machine Learning', icon: 'fa-solid fa-brain', items: ['TensorFlow','PyTorch','OpenAI','LangChain','Hugging Face'] }
+                        { title: 'Frontend Development', icon: 'fa-brands fa-react', color: 'from-sky-500 to-cyan-400', items: ['React.js','Vue.js','Next.js','TypeScript','Tailwind CSS'] },
+                        { title: 'Backend & APIs', icon: 'fa-solid fa-server', color: 'from-amber-500 to-orange-500', items: ['Node.js','Python','Go','GraphQL','REST API'] },
+                        { title: 'Database & Storage', icon: 'fa-solid fa-database', color: 'from-emerald-500 to-teal-400', items: ['PostgreSQL','MongoDB','Redis','Firebase','Supabase'] },
+                        { title: 'Cloud & DevOps', icon: 'fa-brands fa-aws', color: 'from-violet-500 to-fuchsia-400', items: ['AWS','Docker','Kubernetes','CI/CD','Terraform'] },
+                        { title: 'Mobile Development', icon: 'fa-solid fa-mobile-screen', color: 'from-indigo-500 to-blue-400', items: ['React Native','Flutter','iOS','Android'] },
+                        { title: 'AI & Machine Learning', icon: 'fa-solid fa-brain', color: 'from-rose-500 to-red-400', items: ['TensorFlow','PyTorch','OpenAI','LangChain','Hugging Face'] }
                     ]" :key="index">
-                        <div class="surface rounded-xl p-5 surface-hover reveal">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                                    <i :class="skill.icon" class="text-neutral-300"></i>
+                        <div class="glass rounded-2xl p-6 glass-hover card-shine reveal group">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center text-xl text-white shadow-lg" :class="skill.color">
+                                    <i :class="skill.icon"></i>
                                 </div>
-                                <h3 class="font-semibold" x-text="skill.title"></h3>
+                                <h3 class="text-lg font-bold group-hover:text-amber-400 transition-colors" x-text="skill.title"></h3>
                             </div>
-                            <div class="flex flex-wrap gap-1.5">
+                            <div class="flex flex-wrap gap-2">
                                 <template x-for="item in skill.items" :key="item">
-                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-neutral-400" x-text="item"></span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs font-medium text-neutral-400 group-hover:text-neutral-200 transition-colors" x-text="item"></span>
                                 </template>
                             </div>
                         </div>
@@ -226,33 +351,34 @@
         </section>
 
         <!-- Projects -->
-        <section id="proyek" class="py-20 px-6 border-t border-white/5">
+        <section id="proyek" class="py-24 px-6 relative z-10 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
-                <div class="mb-12 reveal">
-                    <p class="text-sm accent font-semibold tracking-widest uppercase">Portfolio</p>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Proyek Unggulan</h2>
+                <div class="mb-14 reveal">
+                    <p class="text-sm text-amber-400 font-semibold tracking-widest uppercase">Portfolio</p>
+                    <h2 class="text-3xl md:text-5xl font-black mt-2">Proyek <span class="gradient-text">Unggulan</span></h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <template x-for="(project, index) in [
-                        { title: 'FinTech Dashboard', desc: 'Sistem monitoring real-time untuk platform fintech dengan analytics tingkat lanjut dan machine learning predictions.', tags: ['React','Node.js','PostgreSQL','ML'], icon: 'fa-chart-line' },
-                        { title: 'E-Commerce Platform', desc: 'Marketplace skala enterprise dengan microservices architecture, handle 1M+ daily transactions.', tags: ['Next.js','Go','Redis','K8s'], icon: 'fa-cart-shopping' },
-                        { title: 'AI Content Platform', desc: 'Platform content generation dengan AI, supporting multi-language dan custom fine-tuning models.', tags: ['Python','FastAPI','LangChain','Vue'], icon: 'fa-robot' },
-                        { title: 'Healthcare App', desc: 'Aplikasi telemedicine dengan video call, appointment scheduling, dan AI-powered symptom checker.', tags: ['React Native','Firebase','Twilio','AI'], icon: 'fa-heart-pulse' }
+                        { title: 'FinTech Dashboard', desc: 'Sistem monitoring real-time untuk platform fintech dengan analytics tingkat lanjut dan machine learning predictions.', tags: ['React','Node.js','PostgreSQL','ML'], icon: 'fa-chart-line', color: 'from-amber-500 to-orange-600' },
+                        { title: 'E-Commerce Platform', desc: 'Marketplace skala enterprise dengan microservices architecture, handle 1M+ daily transactions.', tags: ['Next.js','Go','Redis','K8s'], icon: 'fa-cart-shopping', color: 'from-blue-500 to-cyan-500' },
+                        { title: 'AI Content Platform', desc: 'Platform content generation dengan AI, supporting multi-language dan custom fine-tuning models.', tags: ['Python','FastAPI','LangChain','Vue'], icon: 'fa-robot', color: 'from-violet-500 to-fuchsia-500' },
+                        { title: 'Healthcare App', desc: 'Aplikasi telemedicine dengan video call, appointment scheduling, dan AI-powered symptom checker.', tags: ['React Native','Firebase','Twilio','AI'], icon: 'fa-heart-pulse', color: 'from-emerald-500 to-teal-500' }
                     ]" :key="index">
-                        <article class="surface rounded-xl overflow-hidden surface-hover reveal">
-                            <div class="h-40 bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center border-b border-white/5">
-                                <i :class="'fa-solid ' + project.icon" class="text-5xl text-neutral-600"></i>
+                        <article class="glass rounded-2xl overflow-hidden glass-hover card-shine reveal group">
+                            <div class="h-48 relative overflow-hidden flex items-center justify-center" :class="`bg-gradient-to-br ${project.color}`">
+                                <div class="absolute inset-0 bg-black/30"></div>
+                                <i :class="`fa-solid ${project.icon}`" class="relative text-7xl text-white/90 group-hover:scale-110 transition-transform duration-500"></i>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-lg font-semibold mb-2" x-text="project.title"></h3>
-                                <p class="text-sm muted mb-4 leading-relaxed" x-text="project.desc"></p>
-                                <div class="flex flex-wrap gap-1.5 mb-5">
+                                <h3 class="text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors" x-text="project.title"></h3>
+                                <p class="text-sm text-neutral-400 mb-5 leading-relaxed" x-text="project.desc"></p>
+                                <div class="flex flex-wrap gap-2 mb-5">
                                     <template x-for="tag in project.tags" :key="tag">
-                                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-neutral-400" x-text="tag"></span>
+                                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs font-medium text-neutral-400" x-text="tag"></span>
                                     </template>
                                 </div>
-                                <a href="#" class="inline-flex items-center gap-2 text-sm font-medium accent hover:gap-3 transition-all">
+                                <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 group-hover:gap-3 transition-all">
                                     View Project <i class="fa-solid fa-arrow-right text-xs"></i>
                                 </a>
                             </div>
@@ -263,75 +389,84 @@
         </section>
 
         <!-- Experience -->
-        <section id="pengalaman" class="py-20 px-6 border-t border-white/5">
+        <section id="pengalaman" class="py-24 px-6 relative z-10 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
-                <div class="mb-12 reveal">
-                    <p class="text-sm accent font-semibold tracking-widest uppercase">Career Path</p>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Pengalaman Kerja</h2>
+                <div class="mb-14 reveal">
+                    <p class="text-sm text-amber-400 font-semibold tracking-widest uppercase">Career Path</p>
+                    <h2 class="text-3xl md:text-5xl font-black mt-2">Pengalaman <span class="gradient-text">Kerja</span></h2>
                 </div>
 
-                <ol class="relative border-l border-white/10 ml-3 space-y-8">
-                    <template x-for="(exp, index) in [
-                        { year: '2022 — Sekarang', role: 'Principal Fullstack Developer', company: 'Tech Innovators Indonesia', desc: 'Leading architecture for high-traffic systems processing 10M+ daily requests. Managing team of 15 engineers.' },
-                        { year: '2019 — 2022', role: 'Senior Backend Engineer', company: 'Digital Solutions Corp', desc: 'Designed and implemented microservices architecture serving 5M+ users. Reduced latency by 60%.' },
-                        { year: '2016 — 2019', role: 'Full Stack Developer', company: 'Startup Hub', desc: 'Built scalable web applications and RESTful APIs for enterprise clients. Shipped 20+ products.' },
-                        { year: '2014 — 2016', role: 'Junior Developer', company: 'Web Agency', desc: 'Started career building responsive web applications and learning industry best practices.' }
-                    ]" :key="index">
-                        <li class="ml-6 reveal">
-                            <span class="absolute -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-brand-500 border-2 border-black"></span>
-                            <div class="surface rounded-xl p-5 surface-hover">
-                                <span class="inline-block px-2.5 py-1 rounded-md bg-white/5 text-xs font-medium text-neutral-400 mb-3" x-text="exp.year"></span>
-                                <h3 class="font-semibold" x-text="exp.role"></h3>
-                                <p class="text-sm accent mb-2" x-text="exp.company"></p>
-                                <p class="text-sm muted leading-relaxed" x-text="exp.desc"></p>
+                <div class="relative">
+                    <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500 via-amber-500/40 to-transparent"></div>
+                    <div class="space-y-8">
+                        <template x-for="(exp, index) in [
+                            { year: '2022 — Sekarang', role: 'Principal Fullstack Developer', company: 'Tech Innovators Indonesia', desc: 'Leading architecture for high-traffic systems processing 10M+ daily requests. Managing team of 15 engineers.' },
+                            { year: '2019 — 2022', role: 'Senior Backend Engineer', company: 'Digital Solutions Corp', desc: 'Designed and implemented microservices architecture serving 5M+ users. Reduced latency by 60%.' },
+                            { year: '2016 — 2019', role: 'Full Stack Developer', company: 'Startup Hub', desc: 'Built scalable web applications and RESTful APIs for enterprise clients. Shipped 20+ products.' },
+                            { year: '2014 — 2016', role: 'Junior Developer', company: 'Web Agency', desc: 'Started career building responsive web applications and learning industry best practices.' }
+                        ]" :key="index">
+                            <div class="relative pl-12 reveal">
+                                <div class="absolute left-0 top-2 glow-dot"></div>
+                                <div class="glass rounded-2xl p-6 glass-hover">
+                                    <span class="inline-block px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold mb-3" x-text="exp.year"></span>
+                                    <h3 class="text-xl font-bold mb-1" x-text="exp.role"></h3>
+                                    <p class="text-amber-400 text-sm font-medium mb-3" x-text="exp.company"></p>
+                                    <p class="text-sm text-neutral-400 leading-relaxed" x-text="exp.desc"></p>
+                                </div>
                             </div>
-                        </li>
-                    </template>
-                </ol>
+                        </template>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Contact -->
-        <section id="kontak" class="py-20 px-6 border-t border-white/5">
-            <div class="max-w-3xl mx-auto text-center reveal">
-                <p class="text-sm accent font-semibold tracking-widest uppercase">Get In Touch</p>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Mari Berkolaborasi</h2>
-                <p class="muted mb-10 leading-relaxed">
+        <section id="kontak" class="py-24 px-6 relative z-10 border-t border-white/5">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <p class="text-sm text-amber-400 font-semibold tracking-widest uppercase">Get In Touch</p>
+                <h2 class="text-3xl md:text-5xl font-black mt-2 mb-6">Mari <span class="gradient-text">Berkolaborasi</span></h2>
+                <p class="text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed">
                     Tertarik untuk bekerja sama? Jangan ragu untuk menghubungi saya. Saya selalu terbuka untuk diskusi tentang proyek baru.
                 </p>
 
-                <div class="grid sm:grid-cols-3 gap-4 mb-10">
-                    <a href="mailto:hello@antono.dev" class="surface rounded-xl p-6 surface-hover block">
-                        <i class="fa-solid fa-envelope text-xl accent mb-3"></i>
-                        <h4 class="font-semibold mb-1">Email</h4>
-                        <p class="text-sm muted">hello@antono.dev</p>
+                <div class="grid sm:grid-cols-3 gap-5 mb-12">
+                    <a href="mailto:hello@antono.dev" class="glass rounded-2xl p-7 glass-hover card-shine group block">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-black text-xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4 class="font-bold mb-1">Email</h4>
+                        <p class="text-sm text-neutral-400 group-hover:text-amber-400 transition-colors">hello@antono.dev</p>
                     </a>
-                    <a href="https://wa.me/628123456789" target="_blank" rel="noopener" class="surface rounded-xl p-6 surface-hover block">
-                        <i class="fa-brands fa-whatsapp text-xl accent mb-3"></i>
-                        <h4 class="font-semibold mb-1">WhatsApp</h4>
-                        <p class="text-sm muted">+62 812 3456 789</p>
+                    <a href="https://wa.me/628123456789" target="_blank" rel="noopener" class="glass rounded-2xl p-7 glass-hover card-shine group block">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-xl">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <h4 class="font-bold mb-1">WhatsApp</h4>
+                        <p class="text-sm text-neutral-400 group-hover:text-amber-400 transition-colors">+62 812 3456 789</p>
                     </a>
-                    <a href="https://linkedin.com/in/antonocik" target="_blank" rel="noopener" class="surface rounded-xl p-6 surface-hover block">
-                        <i class="fa-brands fa-linkedin text-xl accent mb-3"></i>
-                        <h4 class="font-semibold mb-1">LinkedIn</h4>
-                        <p class="text-sm muted">antonocik</p>
+                    <a href="https://linkedin.com/in/antonocik" target="_blank" rel="noopener" class="glass rounded-2xl p-7 glass-hover card-shine group block">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xl">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <h4 class="font-bold mb-1">LinkedIn</h4>
+                        <p class="text-sm text-neutral-400 group-hover:text-amber-400 transition-colors">antonocik</p>
                     </a>
                 </div>
 
                 <div class="flex justify-center gap-3">
-                    <a href="https://github.com/antonocik" target="_blank" rel="noopener" aria-label="GitHub" class="w-11 h-11 surface rounded-lg flex items-center justify-center hover:text-brand-500 transition-colors"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://twitter.com/antonocik" target="_blank" rel="noopener" aria-label="X" class="w-11 h-11 surface rounded-lg flex items-center justify-center hover:text-brand-500 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://instagram.com/antonocik" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 surface rounded-lg flex items-center justify-center hover:text-brand-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/@antonocik" target="_blank" rel="noopener" aria-label="YouTube" class="w-11 h-11 surface rounded-lg flex items-center justify-center hover:text-brand-500 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://github.com/antonocik" target="_blank" rel="noopener" aria-label="GitHub" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-amber-500/20 hover:text-amber-400 hover:scale-110 transition-all"><i class="fa-brands fa-github text-lg"></i></a>
+                    <a href="https://twitter.com/antonocik" target="_blank" rel="noopener" aria-label="X" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-amber-500/20 hover:text-amber-400 hover:scale-110 transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                    <a href="https://instagram.com/antonocik" target="_blank" rel="noopener" aria-label="Instagram" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-amber-500/20 hover:text-amber-400 hover:scale-110 transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="https://youtube.com/@antonocik" target="_blank" rel="noopener" aria-label="YouTube" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-amber-500/20 hover:text-amber-400 hover:scale-110 transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-8 px-6 border-t border-white/5">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-sm muted">
+    <footer class="py-8 px-6 border-t border-white/5 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-neutral-500">
             <p>© 2024 Antono. All rights reserved.</p>
-            <p>Designed &amp; built with care.</p>
+            <p class="flex items-center gap-2">Built with <span class="text-amber-400">❤️</span> and <span class="text-amber-400">☕</span></p>
         </div>
     </footer>
 
@@ -341,7 +476,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('in');
                 });
-            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
