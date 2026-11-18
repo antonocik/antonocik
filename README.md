@@ -15,9 +15,6 @@
   <a href="https://linkedin.com/in/antonocik" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
-  <a href="https://twitter.com/antonocik" target="_blank">
-    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
-  </a>
   <a href="mailto:antonocik1@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
   </a>
@@ -93,30 +90,18 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/stats.svg" alt="GitHub Stats" width="48%"/>
-  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/streak.svg" alt="GitHub Streak" width="48%"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=antonocik&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" width="48%"/>
+  <img src="https://streak-stats.demolab.com?user=antonocik&theme=tokyonight&hide_border=true" alt="GitHub Streak" width="48%"/>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/top-langs.svg" alt="Top Languages" width="48%"/>
-  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/trophies.svg" alt="Trophies" width="48%"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=antonocik&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Languages" width="48%"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=antonocik&theme=tokyonight" alt="Profile Summary" width="48%"/>
 </p>
 
 ---
 
 ## 🏙️ Contribution Activity
-
-<p align="center"><strong>3D Contribution City — GitBlock</strong></p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/profile-3d-contrib/profile-gitblock.svg" alt="antonocik 3D contribution graph — GitBlock theme" width="100%"/>
-</p>
-
-
-
-<p align="center"><strong>Snake Animation</strong></p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/snake.svg" alt="Snake Animation" width="100%"/>
-</p>
 
 <p align="center"><strong>GitHub Activity Graph</strong></p>
 <p align="center">
@@ -134,84 +119,6 @@
 | 🌙 | Night owl coder |
 | 🎮 | Gaming enthusiast |
 | 📚 | Always learning something new |
-
----
-
-## ⭐ Featured Projects
-
-<table>
-<tr><td align="center">
-
-🤖 **AI Content Generator**
-
-<em>AI-powered content generator for social media, blogs, and marketing. Built with FastAPI, LangChain, and modern AI models.</em>
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
-  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
-</p>
-
-<p>
-  <a href="https://github.com/antonocik/ai-content-generator">
-    <img src="https://img.shields.io/badge/View_Project-7AA2F7?style=for-the-badge&logo=github&logoColor=white" alt="View Project"/>
-  </a>
-  <img src="https://img.shields.io/github/stars/antonocik/ai-content-generator?style=for-the-badge&color=yellow&label=⭐" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/antonocik/ai-content-generator?style=for-the-badge&color=blue&label=🍴" alt="Forks"/>
-</p>
-
-</td></tr>
-</table>
-
-<table>
-<tr>
-<td align="center" width="50%">
-
-### 📈 MacFolio
-
-Portfolio trading platform with real-time analytics and advanced charting features for traders.
-
-<p>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white" alt="Vue.js"/>
-</p>
-
-<p>
-  <a href="https://github.com/antonocik/MacFolio">
-    <img src="https://img.shields.io/badge/View_Repository-7AA2F7?style=flat-square&logo=github" alt="View Repository"/>
-  </a>
-</p>
-<p>
-  <img src="https://img.shields.io/github/stars/antonocik/MacFolio?style=flat-square&color=yellow&label=⭐" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/antonocik/MacFolio?style=flat-square&color=blue&label=🍴" alt="Forks"/>
-</p>
-
-</td>
-<td align="center" width="50%">
-
-### 💡 3D-Neon-Lightbulb
-
-Creative 3D visual effects and animations showcasing the beauty of neon light aesthetics.
-
-<p>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3"/>
-  <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white" alt="Three.js"/>
-</p>
-
-<p>
-  <a href="https://github.com/antonocik/3D-Neon-Lightbulb">
-    <img src="https://img.shields.io/badge/View_Repository-9ECE6A?style=flat-square&logo=github" alt="View Repository"/>
-  </a>
-</p>
-<p>
-  <img src="https://img.shields.io/github/stars/antonocik/3D-Neon-Lightbulb?style=flat-square&color=yellow&label=⭐" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/antonocik/3D-Neon-Lightbulb?style=flat-square&color=blue&label=🍴" alt="Forks"/>
-</p>
-
-</td>
-</tr>
-</table>
 
 ---
 
