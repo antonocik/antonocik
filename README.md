@@ -87,6 +87,72 @@
 
 ---
 
+## 🎨 Featured Projects
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### ✨ [AI Content Generator](https://github.com/antonocik/ai-content-generator)
+
+Provider-agnostic content generation API and web UI. Blog posts, social captions, emails, product copy and ads from a single endpoint.
+
+**Highlights**
+
+- 🎯 5 content types, 4 tones, 3 providers
+- 🔌 Works offline by default — no API key needed to start
+- 🖥️ Bundled web UI, no build step
+- 🧪 10 end-to-end tests
+
+`Python` · `FastAPI` · `Pydantic`
+
+</td>
+<td width="50%" valign="top">
+
+### 📈 [MacFolio](https://github.com/antonocik/MacFolio)
+
+Portfolio trading and analytics dashboard. Track positions, read live P&L, break down allocation, and submit trades that update the book instantly.
+
+**Highlights**
+
+- 📊 Sortable holdings with per-position sparklines
+- 🍩 Allocation donut drawn as inline SVG
+- 🧮 Trade ticket that blends average cost
+- 🧪 27 unit tests on pure domain logic
+
+`Vue 3` · `Vite` · `Vitest`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 💡 [3D Neon Lightbulb](https://github.com/antonocik/3D-Neon-Lightbulb)
+
+An interactive neon lightbulb rendered in the browser. Physical glass, an emissive filament coil, and real bloom post-processing.
+
+**Highlights**
+
+- 🔮 Refractive glass with transmission and IOR
+- 🌀 Tapered helical filament swept into a tube
+- ✨ `UnrealBloomPass` glow, not a faked sprite
+- 🎛️ Live hue, power and bloom controls
+
+`Three.js` · `WebGL` · `Vite`
+
+</td>
+<td width="50%" valign="top">
+
+### 🎨 More on the way
+
+Every project ships with a README, a CI workflow and tests. Browse the full list on my [repositories page](https://github.com/antonocik?tab=repositories).
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 📊 GitHub Stats
 
 <p align="center">
