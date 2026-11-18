@@ -103,6 +103,20 @@
 
 ## 🏙️ Contribution Activity
 
+<p align="center"><strong>Contribution Snake</strong></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/snake.svg" />
+    <img alt="Contribution snake animation" src="assets/snake.svg" width="100%"/>
+  </picture>
+</p>
+
+<p align="center"><strong>3D Contribution City</strong></p>
+<p align="center">
+  <img src="profile-3d-contrib/profile-gitblock.svg" alt="3D contribution graph" width="100%"/>
+</p>
+
 <p align="center"><strong>GitHub Activity Graph</strong></p>
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=antonocik&theme=dracula" alt="GitHub Activity Graph" width="100%"/>
