@@ -1,174 +1,240 @@
 <div align="center">
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=4000&pause=1000&color=f75c7e&vCenter=true&width=500&height=60&lines=Fullstack+Developer+%F0%9F%92%BB;Computational+Chemist+%F0%9F%91%8C;Building+innovative+solutions)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Antono&fontSize=70&fontAlignY=35&animation=twinkling&fontColor=gradient&desc=Full%20Stack%20Developer%20%7C%20AI%20Enthusiast&descSize=18&descAlignY=55" width="100%"/>
 
----
-
-### 👋 Hi, I'm Antono
-
-A passionate **Fullstack Developer** from Indonesia with a background in **Computational Chemistry**. I love building products that combine scientific precision with modern technology.
+</div>
 
 <p align="center">
-  <a href="https://github.com/antono4" target="_blank">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=2000&pause=2000&color=FFFFFF&background=0D111700&center=true&vCenter=true&width=600&lines=%22I+craft+digital+experiences%22+%F0%9F%94%AC" alt="Typing SVG" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/antonocik" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
-  <a href="https://linkedin.com/in/antono4" target="_blank">
+  <a href="https://linkedin.com/in/antonocik" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
-  <a href="mailto:antono4@example.com" target="_blank">
+  <a href="https://twitter.com/antonocik" target="_blank">
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
+  </a>
+  <a href="mailto:antonocik1@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
   </a>
 </p>
 
-</div>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=antonocik&color=58A6FF&style=for-the-badge&label=Profile+Views" alt="Profile Views"/>
+  <img src="https://img.shields.io/github/followers/antonocik?style=for-the-badge&logo=github&logoColor=white" alt="Followers"/>
+  <img src="https://img.shields.io/github/stars/antonocik?style=for-the-badge&logo=github&logoColor=yellow" alt="Stars"/>
+</p>
+
+---
+
+## 🚀 About Me
+
+<table><tr><td>
+
+<p align="center">
+  <strong>Fullstack Developer</strong> &amp; <strong>Computational Chemist</strong> from <strong>Indonesia</strong> 🇮🇩
+</p>
+
+<p align="center">
+  <em>I transform complex problems into elegant solutions through code.</em>
+</p>
+
+</td></tr></table>
+
+---
+
+## 🛠️ Tech Arsenal
+
+<table>
+<tr><td>
+
+<h3 align="center">💻 Languages</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go"/>
+</p>
+
+<h3 align="center">⚛️ Frontend</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
+</p>
+
+<h3 align="center">⚙️ Backend &amp; Database</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
+</p>
+
+<h3 align="center">🐳 DevOps &amp; Cloud</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
+  <img src="https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=black" alt="AWS"/>
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
+</p>
+
+</td></tr>
+</table>
 
 ---
 
 ## 📊 GitHub Stats
 
-<div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=Antono4&date_format=j%20M%5B%20Y%5D&mode=weekly&background=0D1117&border=30363D&stroke=58A6FF&ring=58A6FF&fire=58A6FF&currStreakNum=58A6FF&sideNums=58A6FF&currStreakLabel=58A6FF&sideLabels=58A6FF&nextDuelMsg=58A6FF&background=0D1117)](https://git.io/streak-stats)
-
-</div>
-
-<div align="center">
-
-![GitHub Stats](https://raw.githubusercontent.com/Antono4/github-stats-transparent/output/generated/overview.svg)
-![GitHub Languages](https://raw.githubusercontent.com/Antono4/github-stats-transparent/output/generated/languages.svg)
-
-</div>
-
----
-
-## 📅 Contributions in the Last Year
-
-<div align="center">
-
-[![ Contributor's GitHub Activity Graph](https://github.com/antono4/antono4/raw/output/github-contribution-grid-snake.svg)](https://github.com/antonockr/antonockr)
-
-</div>
-
 <p align="center">
-
-![Contribution Calendar](https://github-readme-activity-graph.vercel.app/graph?username=antono4&theme=github_dark&area=true&hide_border=true&bg_color=0D1117&color=58A6FF&line=58A6FF&point=58A6FF&area_color=1F6FEB)
-
+  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/stats.svg" alt="GitHub Stats" width="48%"/>
+  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/streak.svg" alt="GitHub Streak" width="48%"/>
 </p>
 
-<div align="center">
-
-| Total Contributions | This Year | This Month |
-|:---:|:---:|:---:|
-| ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=antono4&show_icons=true&theme=transparent&bg_color=0D1117&text_color=58A6FF&border_color=30363D&hide_rank=false) | ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=antonockr&show_icons=true&theme=transparent&bg_color=0D1117&text_color=58A6FF&border_color=30363D&custom_title=This+Year+Contributions) | ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=antono4&show_icons=true&theme=transparent&bg_color=0D1117&text_color=58A6FF&border_color=30363D&custom_title=This+Month+Contributions) |
-
-</div>
-
----
-
-## 🏆 Achievements
-
-<div align="center">
-
-[![Profile Trophy](https://github-profile-trophy.vercel.app/?username=antono4&theme=onedark&margin-w=15&margin-h=15)](https://github.com/antono4)
-
-</div>
-
----
-
-## 💻 Tech Stack
-
-### Languages & Frameworks
-
 <p align="center">
-
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-</p>
-
-### Frontend
-
-<p align="center">
-
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
-
-</p>
-
-### Backend & Databases
-
-<p align="center">
-
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
-![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-
-</p>
-
-### DevOps & Tools
-
-<p align="center">
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=black)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-
-</p>
-
-### Styling & Libraries
-
-<p align="center">
-
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![Styled Components](https://img.shields.io/badge/Styled_Components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white)
-![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
-![RxJS](https://img.shields.io/badge/RxJS-B7178C?style=for-the-badge&logo=reactivex&logoColor=white)
-
+  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/top-langs.svg" alt="Top Languages" width="48%"/>
+  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/trophies.svg" alt="Trophies" width="48%"/>
 </p>
 
 ---
 
+## 🏙️ Contribution Activity
 
-</div>
-
----
-
-## 📝 Latest Blog Posts
-
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
-
----
-
-## 🤝 Connect With Me
-
+<p align="center"><strong>3D Contribution City — GitBlock</strong></p>
 <p align="center">
+  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/profile-3d-contrib/profile-gitblock.svg" alt="antonocik 3D contribution graph — GitBlock theme" width="100%"/>
+</p>
 
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/antono4)
-[![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/antono4)
 
+
+<p align="center"><strong>Snake Animation</strong></p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/antonocik/antonocik/main/assets/snake.svg" alt="Snake Animation" width="100%"/>
+</p>
+
+<p align="center"><strong>GitHub Activity Graph</strong></p>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=antonocik&theme=dracula" alt="GitHub Activity Graph" width="100%"/>
 </p>
 
 ---
 
-<div align="center">
+## 💡 Fun Facts
 
-![Profile Views](https://komarev.com/ghpvc/?username=antonockr&color=58A6FF&style=for-the-badge&label=Profile+Views)
+| | |
+| :---: | :--- |
+| 🧪 | Former computational chemist turned software engineer |
+| ☕ | Powered by coffee and curiosity |
+| 🌙 | Night owl coder |
+| 🎮 | Gaming enthusiast |
+| 📚 | Always learning something new |
+
+---
+
+## ⭐ Featured Projects
+
+<table>
+<tr><td align="center">
+
+🤖 **AI Content Generator**
+
+<em>AI-powered content generator for social media, blogs, and marketing. Built with FastAPI, LangChain, and modern AI models.</em>
 
 <p>
-
-⭐️ From [antonockr](https://github.com/antonockr)
-
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
 </p>
 
-</div>
+<p>
+  <a href="https://github.com/antonocik/ai-content-generator">
+    <img src="https://img.shields.io/badge/View_Project-7AA2F7?style=for-the-badge&logo=github&logoColor=white" alt="View Project"/>
+  </a>
+  <img src="https://img.shields.io/github/stars/antonocik/ai-content-generator?style=for-the-badge&color=yellow&label=⭐" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/antonocik/ai-content-generator?style=for-the-badge&color=blue&label=🍴" alt="Forks"/>
+</p>
+
+</td></tr>
+</table>
+
+<table>
+<tr>
+<td align="center" width="50%">
+
+### 📈 MacFolio
+
+Portfolio trading platform with real-time analytics and advanced charting features for traders.
+
+<p>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white" alt="Vue.js"/>
+</p>
+
+<p>
+  <a href="https://github.com/antonocik/MacFolio">
+    <img src="https://img.shields.io/badge/View_Repository-7AA2F7?style=flat-square&logo=github" alt="View Repository"/>
+  </a>
+</p>
+<p>
+  <img src="https://img.shields.io/github/stars/antonocik/MacFolio?style=flat-square&color=yellow&label=⭐" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/antonocik/MacFolio?style=flat-square&color=blue&label=🍴" alt="Forks"/>
+</p>
+
+</td>
+<td align="center" width="50%">
+
+### 💡 3D-Neon-Lightbulb
+
+Creative 3D visual effects and animations showcasing the beauty of neon light aesthetics.
+
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white" alt="Three.js"/>
+</p>
+
+<p>
+  <a href="https://github.com/antonocik/3D-Neon-Lightbulb">
+    <img src="https://img.shields.io/badge/View_Repository-9ECE6A?style=flat-square&logo=github" alt="View Repository"/>
+  </a>
+</p>
+<p>
+  <img src="https://img.shields.io/github/stars/antonocik/3D-Neon-Lightbulb?style=flat-square&color=yellow&label=⭐" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/antonocik/3D-Neon-Lightbulb?style=flat-square&color=blue&label=🍴" alt="Forks"/>
+</p>
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📫 Get in Touch
+
+<p align="center">
+  <a href="mailto:antonocik1@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+  <a href="https://linkedin.com/in/antonocik">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="https://github.com/antonocik">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  </a>
+</p>
+
+---
+
+<p align="center">
+  <strong>Made with ❤️ by <a href="https://github.com/antonocik">antonocik</a></strong> · ⭐ From Indonesia 🇮🇩
+</p>
+
+<p align="center">
+  🚀 <em>Let's build something amazing together!</em>
+</p>
