@@ -180,7 +180,7 @@ Every project ships with a README, a CI workflow and tests. Browse the full list
 
 <p align="center"><strong>3D Contribution City</strong></p>
 <p align="center">
-  <img src="profile-3d-contrib/profile-gitblock.svg" alt="3D contribution graph" width="100%"/>
+  <img src="profile-3d-contrib/profile-3d.yml" alt="3D contribution graph" width="100%"/>
 </p>
 
 <p align="center"><strong>GitHub Activity Graph</strong></p>
