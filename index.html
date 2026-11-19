@@ -25,6 +25,13 @@
         }
     </script>
 
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.classList.toggle('light', theme === 'light');
+        })();
+    </script>
+
     <style>
         [x-cloak] { display: none !important; }
         * { box-sizing: border-box; }
@@ -185,7 +192,7 @@
         html.light .hover\:text-amber-400:hover { color: #92400e !important; }
     </style>
 </head>
-<body x-data="{ isMenuOpen: false, scrollProgress: 0, theme: (localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) }"
+<body x-data="{ isMenuOpen: false, scrollProgress: 0, theme: (localStorage.getItem('theme') || 'dark') }"
       x-init="document.documentElement.classList.toggle('light', theme === 'light'); $watch('theme', v => { localStorage.setItem('theme', v); document.documentElement.classList.toggle('light', v === 'light'); })"
       @scroll.window="scrollProgress = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100">
 
